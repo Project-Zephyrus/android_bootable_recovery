@@ -817,11 +817,11 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
 
   // Extract the YYYYMMDD date from the full version string. Assume
   // the first instance of "-[0-9]{8}-" (if any) has the desired date.
-  std::string fullver = android::base::GetProperty("ro.statix.version", "");
+  std::string fullver = android::base::GetProperty("ro.zephyrus.version", "");
   std::string ver = fullver.substr(0,4);
 
   std::vector<std::string> title_lines = {
-    "StatiXOS " + ver,
+    "Project Zephyrus " + ver,
     "Android " + android::base::GetProperty("ro.build.version.release", "(unknown)"),
   };
   if (android::base::GetBoolProperty("ro.build.ab_update", false)) {
